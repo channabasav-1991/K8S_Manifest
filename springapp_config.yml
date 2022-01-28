@@ -94,17 +94,17 @@ spec:
           env:
           - name: MONGO_INITDB_ROOT_USERNAME
             valueFrom:
-            configMapKeyRef:
-              name: springappconfig
-              key: mongodbusername
+              configMapKeyRef:
+                name: springappconfig
+                key: mongodbusername
           - name: MONGO_INITDB_ROOT_PASSWORD
             valueFrom:
-            secretKeyRef:
-              name: springappsecret
-              key: mongodbpassword
+              secretKeyRef:
+                name: springappsecret
+                key: mongodbpassword
           volumeMounts:
-        - name: mongodbvol
-          mountPath: /data/db/
+          - name: mongodbvol
+            mountPath: /data/db/
       volumes:
       - name: mongodbvol
         persistentVolumeClaim:
